@@ -1,0 +1,48 @@
+<div class="prof-edit">
+    <P>プロフ編集</P>
+
+    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <p>名前</p>
+            <input name="name">
+        <p>ユーザーアイコン</p>
+            <input name="image" type="file">
+        <p>誕生日</p
+            <!--<input name="birthday" type="date">-->
+        <p>性別</p>
+            <select name="gender">
+                <option>男性</option>
+                <option>女性</option>
+            </select>
+        <p>居住地</p>
+            <select name="residence">
+                <option>東京都</option>
+                <option>神奈川</option>
+                <option>埼玉</option>
+                <option>千葉</option>
+                <option>茨城</option>
+                <option>栃木</option>
+                <option>群馬</option>
+            </select>
+
+        <p>出身地</p>
+            <select name="birthplace">
+                <option>東京都</option>
+                <option>神奈川</option>
+                <option>埼玉</option>
+                <option>千葉</option>
+                <option>茨城</option>
+                <option>栃木</option>
+                <option>群馬</option>
+            </select>
+            
+        <p>プロフィール</p>
+            <textarea name="profile"></textarea>
+        <p>WEBサイト</p>
+       
+        
+        
+        <input type="submit" value="完了">
+
+    <% end %>
+
+</div>

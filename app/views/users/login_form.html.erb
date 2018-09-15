@@ -1,0 +1,26 @@
+<div class="input_form">
+    <div class="login-form">
+        <h2>ログイン</h2>
+            <%= form_tag("/login") do %>
+              　<p>メールアドレス</p>
+                  <input name="email">
+              　<p>パスワード</p>
+                  <input name="password" type="password">
+                  <input type="submit" value="ログイン">
+            <% end %>
+    </div>
+
+
+    <div class="new-form">      
+        <h2>新規登録</h2>
+            <%= form_tag("/users/create") do %>
+                <p>ユーザー名</p>
+                  <input name="name">
+              　<p>メールアドレス</p>
+                  <input name="email">
+              　<p>パスワード</p>
+                  <input name="password" type="password">
+                  <input type="submit" value="新規登録">
+            <% end %>
+    </div>
+</div>

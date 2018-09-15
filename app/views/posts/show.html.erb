@@ -1,0 +1,80 @@
+<div class="posts-show">
+
+<div class="show-top">
+    
+   
+
+     
+    <div class="event-top">
+        <div class="show-title">
+            <h2><%= @post.title %></h2>
+        </div>
+        
+        <div class="show-main-image">
+             <img src="<%= "/images/#{@post.main_image}" %>">
+            
+        </div>
+        
+
+        
+        
+        <div class="info-box">
+            <p>現在の参加人数</p>
+            <p>募集終了まで残り</p>
+            
+            <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                <%= link_to("/likes/#{@post.id}/destroy",{method: "post"}) do %>
+                <span class="fa fa-heart like-btn-unlike">お気に入り</span>
+            <% end %>
+            <% else %>
+                <%= link_to("/likes/#{@post.id}/create",{method: "post"}) do %>
+                <span class="fa fa-heart like-btn">お気に入り</span>
+            <% end %>
+            <% end %>
+        </div> 
+        
+        <div class="event-outline">
+            <p><%= @post.outline %></p>
+        </div>
+        
+    </div>
+        
+</div>
+
+　<div class="show-container clearfix">
+    <div class="event-main">
+        <div class="event-mssage">
+            <p><%= @post.content %></p>
+        </div>
+    </div>
+    
+    <div class="user-profile">
+        <div class="prof-icon">
+            <img src="<%= "/images/#{@user.image_name}" %>">
+        </div>
+        <div class="prof-content">
+            <p class="eventer-residence">
+                <%= @user.residence %>
+            </p>
+            
+            <p class="eventer">イベント投稿者</p>
+                <%= @user.name %>
+            
+            <div class="userprof">
+            <p>プロフィール</p>
+                <%= @user.profile %>
+            </div>
+            
+            
+            <div class="prof-show">
+            <%= link_to("プロフィールを見る","/users/#{@user.id}") %>
+            </div>
+        </div>
+    </div>
+    
+    <div class="participate-box">
+        <p>10000円</p>
+        <div class="btn">参加する</div>
+    </div>
+  </div>
+</div>    

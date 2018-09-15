@@ -1,0 +1,528 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+// ============reset.css===============================
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-weight: bold;
+	
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// ============reset.css end===============================
+
+
+
+*{
+	font-family: Verdana, 'Arial Black', メイリオ, sans-serif;
+	
+}
+
+
+
+
+body{
+    height: auto;
+}
+
+header {
+	height: 70px;
+	border-bottom: 0.5px solid lightgrey;
+	// background-color:lightgrey;
+  }
+  
+footer{
+	height: 400px;
+	background-color:lightgrey;
+}
+
+.header-top{
+	
+}
+
+
+
+.title-style{
+	text-decoration: none;
+	color: #005FFF;
+}
+
+.list-style{
+	text-decoration: none;
+	
+}
+
+h2{
+	font-size: 30px;
+}
+
+.title{
+	font-size: 50px;
+	margin-right: 100px;
+	margin-left: 120px;
+	padding-top: 10px;
+}
+
+.sub{
+	padding-top: 25px;
+}
+
+.header-menu{
+	vertical-align: middle;
+	
+}
+
+.header-list{
+	display: inline-block;
+	margin-right: 60px;
+}
+
+// ========top page =======================
+
+.top-main{
+	font-family: Verdana, 'Arial Black', メイリオ, sans-serif;
+	 
+}
+
+
+
+.top-main-image {
+  color:white;
+  height: 500px;
+  width: cover;
+  background-color: white;
+  
+}
+
+.show-topimage{
+	display: inline-block;
+	width: 50%;
+	position: relative;
+	top: 29.5px;
+	left: 39.5px;
+	float: left;
+}
+
+.show-topimage > img{
+	position: absolute;
+}
+
+.show-boxies{
+	display: inline-block;
+	width: 50%;
+	float: right;
+	position: relative;
+	top: 29.5px;
+	left: 39.5px;
+}
+
+.show-boxies > img{
+	position: absolute;
+}
+
+.region-list{
+	height: 20px;
+}
+
+.post-style{
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+
+.category{
+	background-color:lightgrey;
+	height: 350px;
+	
+}
+
+.region-category, .region-serch{
+	font-size: 20px;
+}
+
+
+.category-comment{
+	font-size: 30px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+.category-menu{
+	text-align: center;
+}
+
+.category-list{
+	display: inline-block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+}
+
+.region-serch{
+	margin-bottom: 20px;
+
+}
+
+.category-region{
+	display: inline-block;
+	margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.btn-category{
+	text-decoration: none;
+}
+
+
+.container{
+	border-bottom: 0.5px solid lightgrey;
+	height: 4000px;
+}
+
+.recommend, .hot, .newevent{
+	width: 100%;
+	height: 25%;
+	background-color: white;
+	border-bottom: 0.5px solid lightgrey;
+}
+
+// .recommend-box{
+// 	width: 100%;
+// 	// margin-left: auto;
+// 	// margin-right: auto;
+// 	background-color: lightgrey
+	
+// }
+
+
+.box{
+	overflow: hidden;
+	margin-top: 30px;
+	width: 250px;
+	height: 360px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px grey ;
+	display: inline-block;
+	float:left;
+	margin-left: 87px;
+	border: 0.5px solid lightgrey;
+
+}
+
+
+
+.box-title{
+	height: 10%;
+}
+
+.box-content{
+	height: 90px;
+}
+
+
+
+
+.btn{
+	text-align: center;
+	padding-top: 50px;
+}
+
+
+
+.more{
+	text-align:right;
+}
+
+
+.square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+
+.square_btn:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    border-bottom: none;
+}
+
+// ============ mypage ========================
+
+.top-mypage{
+	height: auto;
+	width: cover;
+}
+
+.myprof{
+	
+	height: 400px;
+	
+}
+
+
+
+.user-icon{
+	display: inline-block;
+}
+
+.user-icon > img {
+  height: 200px;
+  width: 200px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  margin-top: 100px;
+  margin-left: 200px;
+  
+}
+
+.prof{
+	float:right;
+	// background-color: grey;
+	width: 500px;
+	height: 200px;
+	margin-top: 100px;
+ 	margin-right: 500px;
+    
+	
+}
+.prof-main{
+	padding-left: 10px
+}
+
+
+table{
+	margin-bottom: 20px;
+}
+
+table th {
+  padding: 10px;
+}
+
+table td {
+  padding: 3px 10px;
+   
+}
+
+.management-menu{
+	text-align: center;
+	
+}
+
+.management-list > li{
+	margin-left: 50px;
+	display: inline-block;
+}
+
+.belong-list{
+	text-align: center;
+	margin: 50px;
+}
+
+.belong-list > li {
+	text-align: center;
+	margin: 50px;
+}
+
+
+
+// ============posts new====================
+
+
+
+
+
+// ============posts show===================
+
+.posts-show{
+	height: auto;
+	width: cover;
+}
+
+.show-top{
+	height: 700px;
+	width: cover;
+	border-bottom: 0.5px solid lightgrey;
+	
+}
+
+
+
+
+.event-top{
+	border: 0.5px solid lightgrey;
+	height: 600px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative; top: 50px; z-index: 1;
+
+	
+}
+
+.show-title{
+	text-align: center;
+}
+
+.show-main-image > img{
+	border: 0.5px solid lightgrey;
+	height: 450px;
+	width: 650px;
+	float: left;
+	position: relative; top: 50px; z-index: 0;
+	margin-left: 50px;
+}
+
+.info-box{
+	
+	width: 300px;
+	height: 450px;
+	border: 0.5px solid lightgrey;
+	position: relative; top: 50px; z-index: 0;
+	float: right;
+	margin-right: 50px;
+}
+
+.event-outline{
+	width: 600px;
+	position: relative; top: 50px; z-index: 0;
+	margin-left: 70px;
+}
+
+.event-main{
+	border: 0.5px solid lightgrey;
+	width: 650px;
+	float: left;
+	height: 2000px;
+	margin-left: 170px;
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+
+.user-profile{
+	// background-color: lime;
+	float: right;
+	width: 300px;
+	height: 400px;
+	margin-right: 170px;
+	margin-bottom: 50px;
+	margin-top: 80px;
+	position: relative;
+	border: 0.5px solid lightgrey;
+}
+
+.prof-content{
+	margin-top: 60px;
+	width: 300px;
+	height: 340px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.eventer-residence{
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
+.userprof{
+	margin-top: 20px;
+	padding: 5px;
+	height: 170px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.prof-icon > img{
+	height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    right: 90px;
+    top: -70px;
+}
+
+.participate-box{
+	border: 0.5px solid lightgrey;
+	float: right;
+	width: 300px;
+	height: 500px;
+	margin-right: 170px;
+	
+}
+
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.likes{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+

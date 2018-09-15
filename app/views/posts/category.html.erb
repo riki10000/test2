@@ -1,0 +1,17 @@
+<div></div>
+
+          <div class="container">
+          <% @posts.first(8).each do |post| %>
+          <div class="box">
+                <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
+                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
+                <% end %>
+          <div class="box-title">
+                <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
+          </div> 
+          <div class="box-content">
+                 <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
+         </div>
+         </div>
+         <% end %>
+         </div>

@@ -1,0 +1,36 @@
+<div class="posts-new">
+     
+     
+    <h2>イベントを立ち上げる</h2>
+      <%= form_tag("/posts/create", {multipart: true}) do %>  
+        <p>イベントの名称</p>
+            <input name="title">
+        <p>カテゴリー</p>
+    　                             
+            <select name="category">
+                <option value="s">スポーツ</option>
+                <option value="c">文化系</option>
+                <option value="b">ビジネス</option>
+                <option value="t">旅</option>
+                <option value="o">アウトドア</option>
+                <option value="g">グルメ・お酒</option>
+                <option value="ot">その他</option>
+            </select>
+        <p>メイン画像</p>
+            <input name="main_image" type="file">
+        <p>イベントの概要</p>
+            <textarea name="outline"></textarea>
+        <p>開催日</p>
+        <p>開催場所</p>
+        <p>イベントの締め切り日</p>
+            <input name="event_date" type="date">
+        <p>募集人数</p>
+            <input type="number" name="target_number" >
+        <p>募集金額</p>
+            <input name="target_money" type="number">
+        <p>イベント本分</p>
+            <textarea name="content"></textarea>
+            <input type="submit" value="完了">    
+      <% end %>
+        
+</div>

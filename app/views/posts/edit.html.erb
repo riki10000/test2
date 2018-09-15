@@ -1,0 +1,22 @@
+<div class="posts-edit">
+    
+    <h2>イベントの編集</h2>
+      <%= form_tag("/posts/#{@post.id}/update") do  %>  
+        <p>イベントタイトル</p>
+            <textarea name="title"><%= @post.title %></textarea>
+        <p>メイン画像</p>
+            <textarea name=""></textarea>
+        <p>イベントの概要　三行で</p>
+            <textarea name="outline"></textarea>
+        <p>カテゴリ</p>
+            <textarea name=""></textarea>
+        <p>イベント　本文</p>
+            <textarea name="content"><%= @post.content %></textarea>
+            <input type="submit" value="完了">    
+      <% end %>
+      
+      <h2>イベントの削除</h2>
+      <%= link_to("全削除","/posts/#{@post.id}/destroy", {method: "post"}) %>
+        
+        
+</div>

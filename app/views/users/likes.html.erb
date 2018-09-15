@@ -1,0 +1,56 @@
+<div class="top-mypage">
+    <div class="myprof">
+                <div class="user-icon">
+                    <img src="<%= "/images/#{@user.image_name}" %>">
+                </div>
+                
+            <div class="prof">
+                <p>ユーザー名</p>
+                  <%= @user.name %>
+                <p>年齢</p>
+                
+                <p>性別</p>
+                　<%= @user.gender %>
+                <p>生年月日</p>
+                
+                <p>居住地</p>
+                  <%= @user.residence %>
+                  
+                <p>出身地</p>
+                  <%= @user.birthplace %>
+                
+                <p>プロフィール</p>
+                  <%= @user.profile %>
+                
+            </div>
+            
+    </div>
+    
+                
+    
+    <div class="management-menu">
+        <ul class="management-list">
+           <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit") %></li>
+           <li><%= link_to("立ち上げたサークル", "/circle/top") %></li>
+           <li><%= link_to("所属サークル", "/users/#{@user.id}/mypage_belong") %></li>
+           <li><%= link_to("サークルの編集", "/users/#{@user.id}/mypage_now") %></li>
+           <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes") %></li>
+        </ul>
+    </div>
+   
+    <div class="likes">
+        <% @likes.each do |like| %>
+            <% post = Post.find_by(id: like.post_id) %>
+            
+            <div class="likes-list">
+            <%= link_to(post.title, "/posts/#{post.id}/show") %>
+            </div>
+        <% end %>
+    </div>
+                    
+                
+                
+                
+                
+                
+</div>
