@@ -1,117 +1,154 @@
 
+
+
 <div class="top-main">
   <div class="top-main-image">
     <div class="show-topimage">
      <% @posts.first(1).each do |post| %>
       <%= link_to("/posts/#{post.id}/show", :class => "post-style" ) do %>
-      
-      <%= image_tag "/images/#{post.main_image}", :size => '645x442',:class => "post-style" %>
-    
+      <div class="mask">
+          <div class="caption">
+              <p><%= post.title %></p>
+              <p><%= post.outline %></p>
+               <table>
+                     <tr>
+                         <th>募集人数</th>
+                         <th>現在</th>
+                         <th>残り</th>
+                     </tr>
+                     <tr>
+                         <td><%= post.target_number %>人</th>
+                         <td>○人</th>
+                         <td>○日</th>
+                     </tr>
+               </table>
+          </div>
+      </div>
+      <%= image_tag "/images/#{post.main_image}", :size => '645x442', :class => "post-style", :id => "mini-none" %>
+      <%= image_tag "/images/#{post.main_image}", :size => '320x220', :class => "post-style-mini" %>
+          
       <% end %>
       <% end %>
     </div>
       
    <div class="show-boxies">
-     <% @posts.first(4).each do |post| %>
-     <%= link_to("/posts/#{post.id}/show", :class => "post-style" ) do %>
+         <% @posts.first(4).each do |post| %>
+         
+         <%= link_to("/posts/#{post.id}/show", :class => "post-style" ) do %>
+             <div class="mask-list">
+                <div class="caption-list">
+                  <p><%= post.title %></p>
+                  <p><%= post.outline %></p>
+                  <table> 
+                         <tr>
+                             <th>募集人数</th>
+                             <th>現在</th>
+                             <th>残り</th>
+                         </tr>
+                         <tr>
+                             <td><%= post.target_number %>人</th>
+                             <td>○人</th>
+                             <td>○日</th>
+                         </tr>
+                    </table> 
+                 </div>
+              </div>
+          
       
-     <%= image_tag "/images/#{post.main_image}", :size => '320x220',:class => "post-style" %>
-    
-      <% end %>
-      <% end %>
+         <%= image_tag "/images/#{post.main_image}", :size => '320x220', :class => "post-style", :id => "mini-none" %>
+         <%= image_tag "/images/#{post.main_image}", :size => '320x220', :class => "post-style-mini" %>
+          <% end %>
+          <% end %>
     </div>
       
       
   </div> 
   
   <div class="category">
-    <div class="category-comment">イベントを探してみよう</div>
+    <div class="category-comment"><i class="fas fa-search"></i>イベントを探してみよう</div>
       <div class="category-menu">
       　 <p class="region-categoly">ジャンルから探す</p>
           　<ul>
                 <li class="category-list">
-                    
-                    <%= link_to 'スポーツ', controller: 'posts', action: 'category',category: 's', :class => "btn-category" %>
+                    <%= link_to('スポーツ', {controller: 'posts', action: 'category', category: 's', category_name: 'スポーツ'}, class: "btn-category") %>
                 </li>
                 <li class="category-list">
-                    <%= link_to '文化系', controller: 'posts', action: 'category',category:'c', :class => "btn-category" %>
-                </li>
-                
-                <li class="category-list">
-                    <%= link_to 'ビジネス', controller: 'posts', action: 'category',category:'b', :class => "btn-category" %>
+                    <%= link_to("文化系", {controller: "posts", action: "category",category: "c", category_name: "文化系"}, class: "btn-category") %>
                 </li>
                 
                 <li class="category-list">
-                    <%= link_to '旅', controller: 'posts', action: 'category',category:'t', :class => "btn-category" %>
+                    <%= link_to('ビジネス', {controller: 'posts', action: 'category',category:'b',category_name: 'ビジネス'}, class: "btn-category") %>
                 </li>
                 
                 <li class="category-list">
-                    <%= link_to 'アウトドア', controller: 'posts', action: 'category',category:'o', :class => "btn-category" %>
+                    <%= link_to('旅', {controller: 'posts', action: 'category',category:'t',category_name: '旅'}, class: "btn-category") %>
                 </li>
                 
                 <li class="category-list">
-                    <%= link_to 'グルメ・お酒', controller: 'posts', action: 'category',category:'g', :class => "btn-category" %>
+                    <%= link_to('アウトドア', {controller: 'posts', action: 'category',category:'o',category_name: 'アウトドア'}, class: "btn-category") %>
                 </li>
                 
                 <li class="category-list">
-                    <%= link_to 'その他', controller: 'posts', action: 'category',category:'ot', :class => "btn-category" %>
+                    <%= link_to('グルメ・お酒', {controller: 'posts', action: 'category',category:'g',category_name: 'グルメ・お酒'}, class: "btn-category") %>
+                </li>
+                
+                <li class="category-list">
+                    <%= link_to('その他', {controller: 'posts', action: 'category',category:'ot',category_name: 'その他'}, class: "btn-category") %>
                 </li>
             </ul>
         
         <p class="region-serch">開催地から探す</p>
         <div class="region">
           <%= form_tag("/home/areapage") do %>
-          <%= select_tag 'list[num]', options_for_select([["北海道","1"],
-                                                          ["青森","2"],
-                                                          ["秋田","3"],
-                                                          ["山形","4"],
-                                                          ["岩手","5"],
-                                                          ["宮城","6"],
-                                                          ["福島","7"],
-                                                          ["新潟","8"],
-                                                          ["東京","9"], 
-                                                          ["神奈川","10"],
-                                                          ["埼玉","11"],
-                                                          ["千葉","12"],
-                                                          ["茨城","13"], 
-                                                          ["栃木","14"],
-                                                          ["群馬","15"],
-                                                          ["長野","16"],
-                                                          ["山梨","17"],
-                                                          ["静岡","18"],
-                                                          ["富山","19"],
-                                                          ["岐阜","20"], 
-                                                          ["愛知","21"],
-                                                          ["石川","22"], 
-                                                          ["福井","23"], 
-                                                          ["大阪","24"],
-                                                          ["京都","25"], 
-                                                          ["兵庫","26"], 
-                                                          ["滋賀","27"],
-                                                          ["三重","28"], 
-                                                          ["奈良","29"], 
-                                                          ["和歌山","30"],
-                                                          ["岡山","31"], 
-                                                          ["鳥取","32"],
-                                                          ["香川","33"],
-                                                          ["徳島","34"],
-                                                          ["高知","35"],
-                                                          ["愛媛","36"],
-                                                          ["鳥取","37"],
-                                                          ["広島","38"],
-                                                          ["山口","39"],
-                                                          ["福岡","40"], 
-                                                          ["大分","41"],
-                                                          ["佐賀","42"],
-                                                          ["長崎","43"],
-                                                          ["熊本","44"],
-                                                          ["宮崎","45"],
-                                                          ["鹿児島","46"],
-                                                          ["沖縄","47"],
-                                                          ["海外","48"]
-                                                          
-        
-          ]) %>
+          <%= select_tag 'venue[num]', options_for_select([["北海道","1"],
+                                                                                  ["青森","2"],
+                                                                                  ["秋田","3"],
+                                                                                  ["山形","4"],
+                                                                                  ["岩手","5"],
+                                                                                  ["宮城","6"],
+                                                                                  ["福島","7"],
+                                                                                  ["新潟","8"],
+                                                                                  ["東京","9"], 
+                                                                                  ["神奈川","10"],
+                                                                                  ["埼玉","11"],
+                                                                                  ["千葉","12"],
+                                                                                  ["茨城","13"], 
+                                                                                  ["栃木","14"],
+                                                                                  ["群馬","15"],
+                                                                                  ["長野","16"],
+                                                                                  ["山梨","17"],
+                                                                                  ["静岡","18"],
+                                                                                  ["富山","19"],
+                                                                                  ["岐阜","20"], 
+                                                                                  ["愛知","21"],
+                                                                                  ["石川","22"], 
+                                                                                  ["福井","23"], 
+                                                                                  ["大阪","24"],
+                                                                                  ["京都","25"], 
+                                                                                  ["兵庫","26"], 
+                                                                                  ["滋賀","27"],
+                                                                                  ["三重","28"], 
+                                                                                  ["奈良","29"], 
+                                                                                  ["和歌山","30"],
+                                                                                  ["岡山","31"], 
+                                                                                  ["鳥取","32"],
+                                                                                  ["香川","33"],
+                                                                                  ["徳島","34"],
+                                                                                  ["高知","35"],
+                                                                                  ["愛媛","36"],
+                                                                                  ["鳥取","37"],
+                                                                                  ["広島","38"],
+                                                                                  ["山口","39"],
+                                                                                  ["福岡","40"], 
+                                                                                  ["大分","41"],
+                                                                                  ["佐賀","42"],
+                                                                                  ["長崎","43"],
+                                                                                  ["熊本","44"],
+                                                                                  ["宮崎","45"],
+                                                                                  ["鹿児島","46"],
+                                                                                  ["沖縄","47"],
+                                                                                  ["海外","48"]
+                                                                                  ]) %>
            <input type="submit" value="探す">
           <% end %>
         </div>
@@ -122,49 +159,63 @@
 
  <div class="main posts-index">
     <div class="container">
+        
       <div class="recommend">
-        <h2>おすすめのイベント</h2>
+        <h2 class="sub-title"><i class="far fa-thumbs-up"></i>おすすめのイベント</h2>
                 
                 <% @posts.first(8).each do |post| %>
                
-          <div class="box">
-                <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
-                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
+        <div class="box">
+                <%= link_to("/posts/#{post.id}/show" , :class => "box-style") do %>
+                <%= image_tag"/images/#{post.main_image}", :size => '250x180',:id => "mini-none" %>
+                <%= image_tag"/images/#{post.main_image}", :size => '280x180' ,:class => "mini-img" %>
                 <% end %>
-                
-        
-          <div class="box-category">
-              <%= post.category %>
-          </div>
+  
 
-          <div class="box-title">
-                <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
-          </div> 
-         <div class="box-content">
-                 <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
-         </div>
+             <div class="box-title">
+                <%= link_to( post.title, "/posts/#{post.id}/show", :class => "box-style")  %>
+             </div> 
+             <div class="box-content">
+                 <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "box-style" ) %>
+             </div>
+             <div class="box-table">
+                 
+                <table>
+                     <tr>
+                         <th>募集人数</th>
+                         <th>現在</th>
+                         <th>残り</th>
+                     </tr>
+                     <tr>
+                         <td><%= post.target_number %>人</th>
+                         <td>○人</th>
+                         <td>○日</th>
+                     </tr>
+                </table>
+                 
+             </div>
         </div>
         <% end %>
-
-                    <!--<div class="more">-->
-                    <!--   <a href="#" class="square_btn">show more</a>-->
-                    <!--</div>-->
+                <div class="showmore">
+                    <%= link_to("+ show more", "/posts/more", :class => "morebtn") %>
+                </div>
       </div>
       
+              
+      
       <div class="hot">
-        <h2>人気のイベント</h2>
+        <h2 class="sub-title"><i class="fab fa-hotjar"></i>人気のイベント</h2>
                 
                 <% @posts.first(8).each do |post| %>
                
           <div class="box">
                 <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
-                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
+                <%= image_tag"/images/#{post.main_image}", :size => '250x180',:id => "mini-none" %>
+                <%= image_tag"/images/#{post.main_image}", :size => '280x180' ,:class => "mini-img" %>
                 <% end %>
                 
         
-          <div class="box-category">
-              <%= post.category %>
-          </div>
+         
 
           <div class="box-title">
                 <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
@@ -172,28 +223,40 @@
          <div class="box-content">
                  <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
          </div>
+         <div class="box-table">
+                 
+                <table>
+                     <tr>
+                         <th>募集人数</th>
+                         <th>現在</th>
+                         <th>残り</th>
+                     </tr>
+                     <tr>
+                         <td><%= post.target_number %>人</th>
+                         <td>○人</th>
+                         <td>○日</th>
+                     </tr>
+                </table>
+                 
+             </div>
         </div>
         <% end %>
-
-                    <!--<div class="more">-->
-                    <!--   <a href="#" class="square_btn">show more</a>-->
-                    <!--</div>-->
+                <div class="showmore">
+                    <%= link_to("+ show more", "/posts/more", :class => "morebtn") %>
+                </div>
       </div>
       
       <div class="newevent">
-        <h2>新着のイベント</h2>
+        <h2 class="sub-title"><i class="fas fa-bolt"></i></i>新着のイベント</h2>
                 
                 <% @posts.first(8).each do |post| %>
                
           <div class="box">
                 <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
-                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
+                <%= image_tag"/images/#{post.main_image}", :size => '250x180',:id => "mini-none" %>
+                <%= image_tag"/images/#{post.main_image}", :size => '280x180' ,:class => "mini-img" %>
                 <% end %>
                 
-        
-          <div class="box-category">
-              <%= post.category %>
-          </div>
 
           <div class="box-title">
                 <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
@@ -201,24 +264,27 @@
          <div class="box-content">
                  <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
          </div>
+         <div class="box-table">
+                <table>
+                     <tr>
+                         <th>募集人数</th>
+                         <th>現在</th>
+                         <th>残り</th>
+                     </tr>
+                     <tr>
+                         <td><%= post.target_number %>人</th>
+                         <td>○人</th>
+                         <td>○日</th>
+                     </tr>
+                </table>
         </div>
-        <% end %>
-
-                    <!--<div class="more">-->
-                    <!--   <a href="#" class="square_btn">show more</a>-->
-                    <!--</div>-->
+            
+         </div>
+            <% end %>
+                <div class="showmore">
+                    <%= link_to("+ show more", "/posts/more", :class => "morebtn") %>
+                </div>
       </div>
-          
-      <div class="circle-index">
-          <h2>おすすめのサークル</h2>
-                    
-                        <%= link_to("サークルを作る", "/circles/new", :class => "list-style") %>
-                    
-      </div>          
-        
-        
-        
-    
     </div>
   </div> 
 </div>

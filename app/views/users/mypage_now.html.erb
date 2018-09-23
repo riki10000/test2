@@ -24,31 +24,29 @@
                 </table>
                 
                 <div class="prof-main">
-                    <p>プロフィール</p>
+                    <p><i class="fas fa-user"></i>プロフィール</p>
                     <%= @user.profile %>
                 </div>
                 
             </div>
             
     </div>
-    
-    
-        <div class="management-menu">
-            <ul class="management-list">
-                          <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit") %></li>
-           <li><%= link_to("立ち上げたサークル", "/circle/top") %></li>
-           <li><%= link_to("所属サークル", "/users/#{@user.id}/mypage_belong") %></li>
-           <li><%= link_to("サークルの編集", "/users/#{@user.id}/mypage_now") %></li>
-           <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes") %></li>
-            </ul>
+        <div class="mng">
+            <div class="management-menu">
+                <ul class="management-list">
+               <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit",:class => "mnglist one") %></li>
+               <li><%= link_to("参加イベント", "/users/#{@user.id}/mypage_belong",:class => "mnglist three") %></li>
+               <li><%= link_to("イベントの編集", "/users/#{@user.id}/mypage_now",:class => "mnglist change") %></li>
+               <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes",:class => "mnglist five") %></li>
+                </ul>
+            </div>
+            
+            <div class="belong">
+                <% @user.posts.each do |post| %>
+                <ul class="belong-list">
+                    <li><%= link_to(post.title, "/posts/#{post.id}/edit",:class => "mylist") %></li>
+                </ul>
+                <% end %>
+            </div>
         </div>
-        
-        <div class="belong">
-            <% @user.posts.each do |post| %>
-            <ul class="belong-list">
-                <li><%= link_to(post.title, "/posts/#{post.id}/edit") %></li>
-            </ul>
-            <% end %>
-        </div>
-        
 </div>

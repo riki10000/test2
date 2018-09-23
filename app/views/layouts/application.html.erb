@@ -5,7 +5,7 @@
   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -16,56 +16,53 @@
         <div class="header-top">
                <ul class="header-menu">
                  <li class="header-list title">
-                      <%= link_to("EVENT", "/" ,:class => "title-style" ) %>
+                      <%= link_to("Event", "/" ,:class => "title-style" ) %>
+               
                  </li>  
                   <% if @current_user %>
-            
+                <i id="open-menu-in" class="fas fa-bars"></i>
                       
-                      <li class="header-list sub">
-                        <%= link_to("イベントを作る", "/posts/ready",:class => "list-style") %>
+                      <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("イベントを作る", "/posts/ready",:class => "list-style firstli") %>
                       </li>
                       
-                      <li class="header-list sub">
-                        <%= link_to("イベントを探す" , "/" ,:class => "list-style") %> 
+                      <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("イベントを探す" , "" ,:class => "list-style") %> 
                       </li>
                       
-                       <li class="header-list sub">
-                        <%= link_to("ログアウト", "/logout" , {method: :post ,:class => "list-style"}) %>
+                       <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("ログアウト", "/logout" , {method: :post ,:class => "list-style secoundli logbtn"}) %>
                       </li>
                       
-                      <li class="header-list sub">
-                         <%= link_to(@current_user.name,"/users/#{@current_user.id}" ,:class => "list-style") %>
+                      <li id = "humb-menu" class="header-list sub">
+                         <%= link_to("マイページ","/users/#{@current_user.id}" ,:class => "list-style mybtn") %>
                       </li>
                       
                   <% else %>
-
-                      
-                      <li class="header-list">
-                        <%= link_to("サークルを探す", "/circle/find",:class => "list-style") %>
+               <i id="open-menu-out" class="fas fa-bars"></i>      
+                      <li id = "humb-menu" class="header-list">
+                        <%= link_to("イベントを作る", "/posts/ready",:class => "list-style firstli") %>
                       </li>
                       
-                      <li class="header-list">
-                        <%= link_to("イベントを作る", "/posts/ready",:class => "list-style") %>
-                      </li>
-                      
-                      <li class="header-list">
+                      <li id = "humb-menu" class="header-list">
                         <%= link_to("サークルを探す", "/posts/find",:class => "list-style") %> 
                       </li>
                   
-                      <li class="header-list">
-                        <%= link_to("新規登録/ログイン", "/users/login_form",:class => "list-style") %>
+                      <li id = "humb-menu" class="header-list">
+                        <%= link_to("新規登録/ログイン", "/users/login_form",:class => "list-style secoundli logbtn") %>
                       </li>
-                      
+                 
                   <% end %>
+                
               </ul>
           </div> 
     </header>
     <%= yield %>
     
     <footer>
-          <div class="btn">
-        　  <a href="#" class="square_btn">サークルを立ち上げる</a>
-        　</div>
+          <div class="btn footerbtn">
+            <%= link_to("イベントを作る", "/posts/ready",:class => "logbtn") %>
+        </div>
       <p>asdfasdfasdfsdf</p>
     </footer>
   </body>

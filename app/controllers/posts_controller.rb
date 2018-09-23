@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
   
   def create
-      logger.debug("xxxxxxxxxxxxxxxx #{params[:target_number]}")
+    logger.debug("xxxxxxxxxxxxxxxx #{params[:target_number]}")
     @post = Post.new(title: params[:title],
                      category: params[:category],
                      main_image: params[:main_image],
@@ -27,6 +27,7 @@ class PostsController < ApplicationController
                      target_number: params[:target_number],
                      target_money: params[:target_money],
                      content: params[:content],
+                     venue: params[:venue],
                      user_id: @current_user.id
                        )
     if  params[:main_image]
@@ -45,8 +46,10 @@ class PostsController < ApplicationController
   end
   
   def show
-   @post = Post.find_by(id: params[:id])
-   @user = User.find_by(id: @post.user_id)
+      @post = Post.find_by(id: params[:id])
+      @user = User.find_by(id: @post.user_id)
+    #   join = EventJoin.where(post_id: params[:id])
+    #   @number = EventJoin.where(user_id: join.user_id).count
   end
   
   
@@ -77,7 +80,12 @@ class PostsController < ApplicationController
 
   def category
       logger.debug("xxxxxxxxxxxxxxxx#{params[:category]}")
+      @name = params[:category_name]
       @posts = Post.where(category: params[:category])
+  end
+  
+  def more
+      @posts = Post.where(id: params[:id])
   end
 
   

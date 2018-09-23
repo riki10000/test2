@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_164448) do
+ActiveRecord::Schema.define(version: 2018_09_19_133010) do
 
   create_table "circles", force: :cascade do |t|
     t.string "title"
@@ -24,11 +24,27 @@ ActiveRecord::Schema.define(version: 2018_09_14_164448) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_joins", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "post_id"
+    t.integer "circle_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -44,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_164448) do
     t.datetime "event_date"
     t.text "outline"
     t.string "category"
+    t.string "venue"
   end
 
   create_table "users", force: :cascade do |t|

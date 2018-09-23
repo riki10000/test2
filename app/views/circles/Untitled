@@ -1,0 +1,40 @@
+      <div class="circle-index">
+        <h2 class="sub-title"><i class="fas fa-handshake"></i>おすすめのサークル</h2>
+                
+                <% @circles.first(8).each do |circle| %>
+               
+          <div class="box">
+                <%= link_to("/circles/#{circle.id}/show" , :class => "post-style") do %>
+                <%= image_tag"/images/#{circle.circle_image}", :size => '250x180',:id => "mini-none" %>
+                <% end %>
+                
+
+          <div class="box-title">
+                <%= link_to( circle.title, "/circles/#{circle.id}/show", :class => "post-style")  %>
+          </div> 
+         <div class="box-content">
+                 <%= link_to( circle.outline, "/circles/#{circle.id}/show", :class => "post-style" ) %>
+         </div>
+         <div class="box-table">
+                <table>
+                     <tr>
+                         <th>募集人数</th>
+                         <th>現在</th>
+                         <th>残り</th>
+                     </tr>
+                     <tr>
+                         <td><%=  %>人</th>
+                         <td>○人</th>
+                         <td>○日</th>
+                     </tr>
+                </table>
+        </div>
+            
+         </div>
+            <% end %>
+                <div class="circle-create">
+                    <%= link_to("サークルを作る", "/circles/new", :class => "circlebtn") %>
+                    
+                </div>
+      </div>
+              

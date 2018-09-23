@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @user = User.find_by(id: params[:id])
     @posts = Post.all
+    @circles = Circle.all
   end
   
   def show
@@ -10,9 +11,17 @@ class HomeController < ApplicationController
   end
   
   def areapage
-    @area = params[:list][:num]
-    logger.debug "List result = #{@area}"
+    if request.post?
+      logger.debug("xxxxxxxxxxx #{params[:venue][:num]}")
+      @posts = Post.where(venue: params[:venue][:num])
+    else
+      redirect_to("/")
+      logger.debug("xxxxxxxxxxx")
+    end
+    
   end
+  
+  
   
 
 end

@@ -7,7 +7,7 @@
             <div class="prof">
                 
                 <table border="1">
-                          <tr>
+                          <tr class="prof-th">
                             <th>ユーザー名</th>
                             <th>年齢</th>
                             <th>性別</th>
@@ -24,7 +24,7 @@
                 </table>
                 
                 <div class="prof-main">
-                    <p>プロフィール</p>
+                    <p><i class="fas fa-user"></i>プロフィール</p>
                     <%= @user.profile %>
                 </div>
                 
@@ -36,11 +36,10 @@
     
     <div class="management-menu">
         <ul class="management-list">
-           <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit") %></li>
-           <li><%= link_to("立ち上げたサークル", "/circle/top") %></li>
-           <li><%= link_to("所属サークル", "/users/#{@user.id}/mypage_belong") %></li>
-           <li><%= link_to("サークルの編集", "/users/#{@user.id}/mypage_now") %></li>
-           <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes") %></li>
+           <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit",:class => "mnglist one") %></li>
+           <li><%= link_to("参加イベント", "/users/#{@user.id}/mypage_belong",:class => "mnglist three") %></li>
+           <li><%= link_to("サークルの編集", "/users/#{@user.id}/mypage_now",:class => "mnglist four") %></li>
+           <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes",:class => "mnglist five") %></li>
         </ul>
     </div>
                 

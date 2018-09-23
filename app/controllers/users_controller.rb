@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   
   def mypage_belong
     @user = User.find_by(id: params[:id])
+    @join = EventJoin.where(user_id: @current_user.id)
     logger.debug "xxxxxxxxxxxxxxxx  #{@user.image_name}"
   end
   

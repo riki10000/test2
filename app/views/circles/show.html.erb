@@ -7,31 +7,26 @@
      
     <div class="event-top">
         <div class="show-title">
-            <h2><%= @post.title %></h2>
+            <h2><%= @circle.title %></h2>
         </div>
         
-        
-            <div class="show-main-image">
-                 <img src="<%= "/images/#{@post.main_image}" %>">
-                
-            </div>
+        <div class="show-main-image">
+             <img src="<%= "/images/#{@circle.circle_image}" %>">
             
-            <div class="event-outline">
-                <p><%= @post.outline %></p>
-            </div>
-       
+        </div>
+        
 
         
-    
+        
         <div class="info-box">
             <div class="tg-number">
                 <div>募集人数</div>
-                    <p><%= @post.target_number %>人</p>
+                    <p><%=  %>人</p>
             </div>
             
             <div class="join-number">  
                 <div>現在の参加人数</div>
-                    <p><%= @number %>人</p>
+                    <p>◯人</p>
             </div>
             
             <div class="close-date">
@@ -41,23 +36,21 @@
             
             
             <div class="like">
-                <% if @user_id == nil %>
-                    <%= link_to("/users/login_form") do %>
-                    <span class="fa fa-heart like-btn">お気に入り</span>
-                    <% end %>   
-                <% elsif Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-                    <%= link_to("/likes/#{@post.id}/destroy",{method: "post"}) do %>
+                <% if Like.find_by(user_id: @current_user.id, circle_id: @circle.id) %>
+                    <%= link_to("/likes/#{@circle.id}/destroy",{method: "post"}) do %>
                     <span class="fa fa-heart like-btn-unlike">お気に入り</span>
-                    <% end %>
+                <% end %>
                 <% else %>
-                    <%= link_to("/likes/#{@post.id}/create",{method: "post"}) do %>
+                    <%= link_to("/likes/#{@circle.id}/create",{method: "post"}) do %>
                     <span class="fa fa-heart like-btn">お気に入り</span>
                 <% end %>
                 <% end %>
             </div>
         </div> 
         
-        
+        <div class="event-outline">
+            <p><%= @circle.outline %></p>
+        </div>
         
     </div>
         
@@ -66,7 +59,7 @@
 　<div class="show-container clearfix">
     <div class="event-main">
         <div class="event-mssage">
-            <p><%= @post.content %></p>
+            <p><%= @circle.content %></p>
         </div>
     </div>
     
@@ -97,11 +90,11 @@
     <div class="participate-box">
         <div class="join-box">
             <div>現在の参加人数</div>
-                <p>○/<%= @post.target_number %></p>
+                <p>○/<%=  %></p>
         </div>
-        <div class="join-btnbox">
-            <%= link_to("このイベントに参加する", "/event_joins/#{@post.id}/new" ,:class => "join-btn") %>
+        <div class="join-btn">
+            <p>このイベントに参加する</p>
         </div>
     </div>
   </div>
-</div>    
+</div> 

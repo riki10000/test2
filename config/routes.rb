@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
   
   
+  get "comments/:id/index" => "comments#index"
+  
+  
+  get "event_joins/index" => "event_joins#index"
+  get "event_joins/:id/new" => "event_joins#new"
+  post "event_joins/:id/create" => "event_joins#create"
+  
+  
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
+  # post "likes/:circle_id/create" => "likes#create"
+  # post "likes/:circle_id/destroy" => "likes#destroy"
   
   get 'circles/index'
   get "circles/top" => "circles#top"
   get "circles/ready"  => "circles#ready"
   get "circles/new" => "circles#new"
+  post "circles/create" => "circles#create"
+  get "circles/:id/show" => "circles#show"
   
   
   
@@ -37,11 +49,13 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
   get "posts/category" => "posts#category"
+  get "posts/more" => "posts#more"
   
 
   
   get "/"  => "home#top"
   post "home/areapage" => "home#areapage"
+  get "home/areapage" => "home#areapage"
   
   
   
