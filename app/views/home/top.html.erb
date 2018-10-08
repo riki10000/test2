@@ -14,12 +14,12 @@
                      <tr>
                          <th>募集人数</th>
                          <th>現在</th>
-                         <th>残り</th>
+                         <th>開催日</th>
                      </tr>
                      <tr>
                          <td><%= post.target_number %>人</th>
-                         <td>○人</th>
-                         <td>○日</th>
+                         <td><%= @number %>人</th>
+                         <td><%= post.event_date %>日</th>
                      </tr>
                </table>
           </div>
@@ -47,7 +47,7 @@
                          </tr>
                          <tr>
                              <td><%= post.target_number %>人</th>
-                             <td>○人</th>
+                             <td><%= @number %>人</th>
                              <td>○日</th>
                          </tr>
                     </table> 
@@ -67,7 +67,7 @@
   <div class="category">
     <div class="category-comment"><i class="fas fa-search"></i>イベントを探してみよう</div>
       <div class="category-menu">
-      　 <p class="region-categoly">ジャンルから探す</p>
+      　 <p class="region-category">ジャンルから探す</p>
           　<ul>
                 <li class="category-list">
                     <%= link_to('スポーツ', {controller: 'posts', action: 'category', category: 's', category_name: 'スポーツ'}, class: "btn-category") %>
@@ -149,7 +149,7 @@
                                                                                   ["沖縄","47"],
                                                                                   ["海外","48"]
                                                                                   ]) %>
-           <input type="submit" value="探す">
+           <input type="submit" value="探す" class="serch-btn">
           <% end %>
         </div>
       </div>
@@ -188,7 +188,7 @@
                      </tr>
                      <tr>
                          <td><%= post.target_number %>人</th>
-                         <td>○人</th>
+                         <td><%= @number %>人</th>
                          <td>○日</th>
                      </tr>
                 </table>
@@ -207,7 +207,6 @@
         <h2 class="sub-title"><i class="fab fa-hotjar"></i>人気のイベント</h2>
                 
                 <% @posts.first(8).each do |post| %>
-               
           <div class="box">
                 <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
                 <%= image_tag"/images/#{post.main_image}", :size => '250x180',:id => "mini-none" %>
@@ -233,7 +232,7 @@
                      </tr>
                      <tr>
                          <td><%= post.target_number %>人</th>
-                         <td>○人</th>
+                         <td><%= @number %>人</th>
                          <td>○日</th>
                      </tr>
                 </table>
@@ -247,9 +246,9 @@
       </div>
       
       <div class="newevent">
-        <h2 class="sub-title"><i class="fas fa-bolt"></i></i>新着のイベント</h2>
+        <h2 class="sub-title"><i class="fas fa-bolt"></i>新着のイベント</h2>
                 
-                <% @posts.first(8).each do |post| %>
+                <% @newevents.first(8).each do |post| %>
                
           <div class="box">
                 <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
@@ -273,7 +272,7 @@
                      </tr>
                      <tr>
                          <td><%= post.target_number %>人</th>
-                         <td>○人</th>
+                         <td><%= @number %>人</th>
                          <td>○日</th>
                      </tr>
                 </table>

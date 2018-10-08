@@ -41,7 +41,7 @@
             
             
             <div class="like">
-                <% if @user_id == nil %>
+                <% if @current_user == nil %>
                     <%= link_to("/users/login_form") do %>
                     <span class="fa fa-heart like-btn">お気に入り</span>
                     <% end %>   
@@ -97,7 +97,7 @@
     <div class="participate-box">
         <div class="join-box">
             <div>現在の参加人数</div>
-                <p>○/<%= @post.target_number %></p>
+                <p><%= @number %>/<%= @post.target_number %></p>
         </div>
         <div class="join-btnbox">
             <%= link_to("このイベントに参加する", "/event_joins/#{@post.id}/new" ,:class => "join-btn") %>

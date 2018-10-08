@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   get "comments/:id/index" => "comments#index"
+  post "comments/:id/create" => "comments#create"
   
   
   get "event_joins/index" => "event_joins#index"

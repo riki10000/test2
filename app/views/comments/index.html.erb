@@ -1,9 +1,67 @@
 <div class="comments-top">
     
     <div class="comments-box">
-        <h1></h1>
-            <p></p>
+        <div class="comments-section">
+            <div class="comments-container">
+        
+                <% @messages.each do |message| %>
+                <% if message.user_id == session[:user_id] %>
+                <div class="clearfix">
+                 <div class="user-ico-name chat-right">
+                    <div class="comments-user-ico">
+                        <% user = User.find_by(id: message.user_id) %>
+                        <img src="<%= "/images/#{user.image_name}" %>">
+                    </div>
+                    
+                    <div class="comments-user-name">
+                        <%= user.name %>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="comments-user-message chat-right balloon-right">
+                        <%= message.comment %>
+                    </div>
+                </div>
+                </div>
+                    <% else %>
+                    
+                <div class="user-ico-name">
+                    <div class="comments-user-ico">
+                        <% user = User.find_by(id: message.user_id) %>
+                        <img src="<%= "/images/#{user.image_name}" %>">
+                    </div>
+                    
+                    <div class="comments-user-name">
+                        <%= user.name %>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="comments-user-message balloon">
+                        <%= message.comment %>
+                    </div>
+                </div>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+        
+        
+        <%= form_tag("/comments/#{@post_id}/create", method: :post) do %>
+        
+            <div class="comments-submit">
+                 <input name="comment">
+                 <input type="submit" value="送信">
+                 <input type="submit" value="&#xf075;" class="fas">
+            </div>
+        <% end %>
     </div>
     
 
+     
+
 </div>
+
+
+

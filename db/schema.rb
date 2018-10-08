@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_133010) do
     t.integer "event_cat"
     t.datetime "event_date"
     t.text "outline"
+    t.string "image_name"
     t.string "category"
     t.string "venue"
   end

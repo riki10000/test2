@@ -1,10 +1,10 @@
 <div class="more-top">
-    <div class="more-title">
-        <h2 class="more-name"><%=  %></h2>
+    <div class="area-title more-title">
+        <h2 class="more-name">新着のイベント</h2>
     </div>
 
           <div class="container">
-          <% @posts.first(8).each do |post| %>
+          <% @newevents.first(24).each do |post| %>
           <div class="box">
                 <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
                 <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>

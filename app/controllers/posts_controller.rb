@@ -31,7 +31,7 @@ class PostsController < ApplicationController
                      user_id: @current_user.id
                        )
     if  params[:main_image]
-        @post.main_image = "#{@post.title}.png"
+        @post.main_image = "#{@current_user.id}.main.png"
         image = params[:main_image]
         File.binwrite("public/images/#{@post.main_image}", image.read)
     end
@@ -48,8 +48,10 @@ class PostsController < ApplicationController
   def show
       @post = Post.find_by(id: params[:id])
       @user = User.find_by(id: @post.user_id)
-    #   join = EventJoin.where(post_id: params[:id])
-    #   @number = EventJoin.where(user_id: join.user_id).count
+      
+      
+      @join = EventJoin.where(post_id: params[:id])
+      @number = EventJoin.where(user_id: params[:id]).count
   end
   
   
@@ -63,6 +65,7 @@ class PostsController < ApplicationController
        @post.title = params[:title]
        @post.outline = params[:outline]
        @post.content = params[:content]
+       @post.main_image = params[:main_image]
     if @post.save
        redirect_to("/")
     else
@@ -85,7 +88,8 @@ class PostsController < ApplicationController
   end
   
   def more
-      @posts = Post.where(id: params[:id])
+      @newevents = Post.where(id: params[:id])
+      
   end
 
   

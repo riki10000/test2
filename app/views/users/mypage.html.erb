@@ -1,7 +1,7 @@
 <div class="top-mypage">
     <div class="myprof">
             <div class="user-icon">
-                <img src="<%= "/images/#{@user.image_name}" %>">
+                <img src="<%= "/images/#{@current_user.image_name}" %>">
             </div>
                 
             <div class="prof">
@@ -15,17 +15,17 @@
                             <th>出身地</th>
                           </tr>
                           <tr>
-                            <td><%= @user.name %></td>　
+                            <td><%= @current_user.name %></td>　
                             <td></td>
-                            <td><%= @user.gender %></td>
-                            <td><%= @user.residence %></td>
-                            <td><%= @user.birthplace %></td>
+                            <td><%= @current_user.gender %></td>
+                            <td><%= @current_user.residence %></td>
+                            <td><%= @current_user.birthplace %></td>
                           </tr>
                 </table>
                 
                 <div class="prof-main">
                     <p><i class="fas fa-user"></i>プロフィール</p>
-                    <%= @user.profile %>
+                    <%= @current_user.profile %>
                 </div>
                 
             </div>
@@ -36,10 +36,10 @@
     
     <div class="management-menu">
         <ul class="management-list">
-           <li><%= link_to("プロフィールの編集", "/users/#{@user.id}/edit",:class => "mnglist one") %></li>
-           <li><%= link_to("参加イベント", "/users/#{@user.id}/mypage_belong",:class => "mnglist three") %></li>
-           <li><%= link_to("サークルの編集", "/users/#{@user.id}/mypage_now",:class => "mnglist four") %></li>
-           <li><%= link_to("お気に入りしたサークル", "/users/#{@user.id}/likes",:class => "mnglist five") %></li>
+           <li><%= link_to("プロフィールの編集", "/users/#{@current_user.id}/edit",:class => "mnglist one") %></li>
+           <li><%= link_to("参加イベント", "/users/#{@current_user.id}/mypage_belong",:class => "mnglist three") %></li>
+           <li><%= link_to("サークルの編集", "/users/#{@current_user.id}/mypage_now",:class => "mnglist four") %></li>
+           <li><%= link_to("お気に入りしたサークル", "/users/#{@current_user.id}/likes",:class => "mnglist five") %></li>
         </ul>
     </div>
                 

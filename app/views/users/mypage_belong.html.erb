@@ -1,7 +1,7 @@
 <div class="top-mypage">
     <div class="myprof">
             <div class="user-icon">
-                <img src="<%= "/images/#{@user.image_name}" %>">
+                <img src="<%= "/images/#{@current_user.image_name}" %>">
             </div>
                 
             <div class="prof">
@@ -46,12 +46,13 @@
             <% @user.posts.each do |post| %>
                 <ul class="belong-list">
                     <li><%= link_to(post.title, "/comments/#{post.id}/index",:class => "mylist") %></li>
+                    
                 </ul>
             <% end %>
             
             <% @join.each do |join| %>
                 <ul class="belong-list">
-                    <li><%= link_to(join.post_id, "/comments/#{join.user_id}/index",:class => "mylist") %></li>
+                    <li><%= link_to(join.post_id, "/comments/#{join.post_id}/index",:class => "mylist") %></li>
                 </ul>
             <% end %>
         </div>

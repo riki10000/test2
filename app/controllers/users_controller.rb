@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :authenticate_user ,{only:[:new, :edit, :update, :create, :mypage, :mypage_belong, :mypage_startup, :mypage_now, :logout]}
+  before_action :authenticate_user ,{only:[:new, :edit, :update,  :mypage, :mypage_belong, :mypage_startup, :mypage_now, :logout]}
   before_action :forbid_login_user, {only: [:login_form, :login]}
   
 
