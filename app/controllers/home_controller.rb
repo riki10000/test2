@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     
     @newevent = Post.all.order(created_at: :desc)
     
+    # like_count = Post.joins(:likes).group(:post_id).count
+    
+
+    
     
     # @circles = Circle.all
   end

@@ -1,48 +1,148 @@
-<div class="prof-edit">
-    <P>プロフ編集</P>
-
-    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-        <p>名前</p>
-            <input name="name">
-        <p>ユーザーアイコン</p>
-            <input name="image" type="file">
-        <p>誕生日</p
-            <!--<input name="birthday" type="date">-->
-        <p>性別</p>
-            <select name="gender">
-                <option>男性</option>
-                <option>女性</option>
-            </select>
-        <p>居住地</p>
-            <select name="residence">
-                <option>東京都</option>
-                <option>神奈川</option>
-                <option>埼玉</option>
-                <option>千葉</option>
-                <option>茨城</option>
-                <option>栃木</option>
-                <option>群馬</option>
-            </select>
-
-        <p>出身地</p>
-            <select name="birthplace">
-                <option>東京都</option>
-                <option>神奈川</option>
-                <option>埼玉</option>
-                <option>千葉</option>
-                <option>茨城</option>
-                <option>栃木</option>
-                <option>群馬</option>
-            </select>
+<div class="users-edit">
+    <div class="users-edit-top">
+        <h2>プロフ編集</h2>
+    
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+    
+                <table border=1> 
+                                 <tr>
+                                    <th>名前</th>
+                                    <td><input name="name"></th>
+                                 </tr>
+                                 
+                                  <tr>
+                                    <th>ユーザーアイコン</th>
+                                    <td><input name="image" type="file"></th>
+                                 </tr>
+                                 
+                                  <tr>
+                                    <th>性別</th>
+                                    <td><select name="gender"><option>男性</option>
+                                                              <option>女性</option>
+                                        </select>
+                                    </td>
+                                 </tr>
+                                 
+                                  <tr>
+                                    <th>居住地</th>
+                                    <td><select name="residence">
+                                           <option value="1">北海道</option>
+                                                <option value="2">青森</option>
+                                                <option value="3">秋田</option>
+                                                <option value="4">山形</option>
+                                                <option value="5">岩手</option>
+                                                <option value="6">宮城</option>
+                                                <option value="7">福島</option>
+                                                <option value="8">新潟</option>
+                                                <option value="9">東京</option>
+                                                <option value="10">神奈川</option>
+                                                <option value="11">埼玉</option>
+                                                <option value="12">千葉</option>
+                                                <option value="13">茨城</option>
+                                                <option value="14">栃木</option>
+                                                <option value="15">群馬</option>
+                                                <option value="16">長野</option>
+                                                <option value="17">山梨</option>
+                                                <option value="18">静岡</option>
+                                                <option value="19">富山</option>
+                                                <option value="20">岐阜</option>
+                                                <option value="21">愛知</option>
+                                                <option value="22">石川</option>
+                                                <option value="23">福井</option>
+                                                <option value="24">大阪</option>
+                                                <option value="25">京都</option>
+                                                <option value="26">兵庫</option>
+                                                <option value="27">滋賀</option>
+                                                <option value="28">三重</option>
+                                                <option value="29">奈良</option>
+                                                <option value="30">和歌山</option>
+                                                <option value="31">岡山</option>
+                                                <option value="32">鳥取</option>
+                                                <option value="33">香川</option>
+                                                <option value="34">徳島</option>
+                                                <option value="35">高知</option>
+                                                <option value="36">愛媛</option>
+                                                <option value="37">鳥取</option>
+                                                <option value="38">広島</option>
+                                                <option value="39">山口</option>
+                                                <option value="40">福岡</option>
+                                                <option value="41">大分</option>
+                                                <option value="42">佐賀</option>
+                                                <option value="43">長崎</option>
+                                                <option value="44">熊本</option>
+                                                <option value="45">宮崎</option>
+                                                <option value="46">鹿児島</option>
+                                                <option value="47">沖縄</option>
+                                                <option value="48">海外</option>
+                                        </select>
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                                    <th>出身地</th>
+                                    <td><select name="birthplace">
+                                                <option value="1">北海道</option>
+                                                <option value="2">青森</option>
+                                                <option value="3">秋田</option>
+                                                <option value="4">山形</option>
+                                                <option value="5">岩手</option>
+                                                <option value="6">宮城</option>
+                                                <option value="7">福島</option>
+                                                <option value="8">新潟</option>
+                                                <option value="9">東京</option>
+                                                <option value="10">神奈川</option>
+                                                <option value="11">埼玉</option>
+                                                <option value="12">千葉</option>
+                                                <option value="13">茨城</option>
+                                                <option value="14">栃木</option>
+                                                <option value="15">群馬</option>
+                                                <option value="16">長野</option>
+                                                <option value="17">山梨</option>
+                                                <option value="18">静岡</option>
+                                                <option value="19">富山</option>
+                                                <option value="20">岐阜</option>
+                                                <option value="21">愛知</option>
+                                                <option value="22">石川</option>
+                                                <option value="23">福井</option>
+                                                <option value="24">大阪</option>
+                                                <option value="25">京都</option>
+                                                <option value="26">兵庫</option>
+                                                <option value="27">滋賀</option>
+                                                <option value="28">三重</option>
+                                                <option value="29">奈良</option>
+                                                <option value="30">和歌山</option>
+                                                <option value="31">岡山</option>
+                                                <option value="32">鳥取</option>
+                                                <option value="33">香川</option>
+                                                <option value="34">徳島</option>
+                                                <option value="35">高知</option>
+                                                <option value="36">愛媛</option>
+                                                <option value="37">鳥取</option>
+                                                <option value="38">広島</option>
+                                                <option value="39">山口</option>
+                                                <option value="40">福岡</option>
+                                                <option value="41">大分</option>
+                                                <option value="42">佐賀</option>
+                                                <option value="43">長崎</option>
+                                                <option value="44">熊本</option>
+                                                <option value="45">宮崎</option>
+                                                <option value="46">鹿児島</option>
+                                                <option value="47">沖縄</option>
+                                                <option value="48">海外</option>
+                                        </select>
+                                    </td>
+                                 </tr>
+                                 
+                                 <tr>
+                                    <th>プロフィール</th>
+                                    <td class="users-edit-prof"><textarea name="profile"></textarea></td>
+                                 </tr>
+                            </table>
+                            
+            <div class="users-edit-submit">
+                <p><input type="submit" value="完了" class="users-edit-btns"></p>
+            </div>
             
-        <p>プロフィール</p>
-            <textarea name="profile"></textarea>
-        <p>WEBサイト</p>
-       
-        
-        
-        <input type="submit" value="完了">
-
-    <% end %>
-
+        <% end %>
+    </div>
 </div>

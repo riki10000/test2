@@ -30,18 +30,25 @@ class PostsController < ApplicationController
                      venue: params[:venue],
                      user_id: @current_user.id
                        )
-    if  params[:main_image]
-        @post.main_image = "#{@current_user.id}.main.png"
-        image = params[:main_image]
-        File.binwrite("public/images/#{@post.main_image}", image.read)
-    end
+
                        
     if  @post.save
-        redirect_to("/")
+      @post = Post.last
+        if  params[:main_image]
+          @post.main_image = "#{@post.id}.main.png"
+          image = params[:main_image]
+          File.binwrite("public/images/#{@post.main_image}", image.read)
+        @post.save
+        end
+        
+    
+    redirect_to("/")
       
     else
        render("posts/new")
     end
+    
+    
    
   end
   

@@ -1,41 +1,43 @@
 
 
     <div class="posts-edit">
-
-        <h2>イベントの編集</h2>
-          <%= form_tag("/posts/#{@post.id}/update") do  %>
-
-
-                    <table> 
-                         <tr>
-                            <th>イベントタイトル</th>
-                            <td><input name="title" value="<%= @post.title %>"></th>
-                         </tr>
-                         
-                          <tr>
-                            <th>メイン画像</th>
-                            <td><input name="main_image" type="file"></th>
-                         </tr>
-                         
-                          <tr>
-                            <th>イベントの概要　三行で</th>
-                            <td><textarea name="outline"><%= @post.outline %></textarea></th>
-                         </tr>
-                         
-                          <tr>
-                            <th>イベント本文</th>
-                            <td><textarea name="content"><%= @post.content %></textarea></th>
-                         </tr>
-                         
-                         <tr>
-                            <th><input type="submit" value="完了"> </th>
-                         </tr>
-                         
-                    </table>
-
-          <% end %>
-
-        <h2>イベントの削除</h2>
-          <%= link_to("全削除","/posts/#{@post.id}/destroy", {method: "post"}) %>
-
+        <div class="edit-container">
+            <h2>イベントの編集</h2>
+              <%= form_tag("/posts/#{@post.id}/update") do  %>
+    
+                    <div class="edit-table">
+                        <table border=1> 
+                             <tr>
+                                <th>イベントタイトル</th>
+                                <td><input name="title" value="<%= @post.title %>"></th>
+                             </tr>
+                             
+                              <tr>
+                                <th>メイン画像</th>
+                                <td><input name="main_image" type="file"></th>
+                             </tr>
+                             
+                              <tr>
+                                <th>イベントの概要　三行で</th>
+                                <td><textarea name="outline"><%= @post.outline %></textarea></th>
+                             </tr>
+                             
+                              <tr>
+                                <th>イベント本文</th>
+                                <td><textarea name="content"><%= @post.content %></textarea></th>
+                             </tr>
+                        </table>
+                        
+                        <div class="edit-submit">
+                            <input type="submit" value="完了">
+                        </div>
+                            
+                    </div>
+              <% end %>
+        </div>
+          
+        <div class="edit-delete">
+            <h2>イベントの削除</h2>
+             <p><%= link_to("全削除","/posts/#{@post.id}/destroy",{method: "post"}) %></p>
+        </div>
     </div>
