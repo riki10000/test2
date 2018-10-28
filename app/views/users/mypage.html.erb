@@ -1,51 +1,47 @@
-<div class="top-mypage">
-    <div class="myprof">
-            <div class="user-icon">
-                <img src="<%= "/images/#{@current_user.image_name}" %>">
-            </div>
-                
-            <div class="prof">
-                
-                <table border="1">
-                          <tr class="prof-th">
-                            <th>ユーザー名</th>
-                            <th>年齢</th>
-                            <th>性別</th>
-                            <th>居住地</th>
-                            <th>出身地</th>
-                          </tr>
-                          <tr>
-                            <td><%= @current_user.name %></td>　
-                            <td></td>
-                            <td><%= @current_user.gender %></td>
-                            <td><%= @residence %></td>
-                            <td><%= @birthplace %></td>
-                          </tr>
-                </table>
-                
-                <div class="prof-main">
-                    <p><i class="fas fa-user"></i>プロフィール</p>
-                    <%= @current_user.profile %>
+<%= render 'header' %>
+    <div class="top-mypage">
+        <div class="myprof">
+                <div class="user-icon">
+                    <img src="<%= "/images/#{@current_user.image_name}" %>">
+                </div>
+                    
+                <div class="prof">
+                    
+                    <table border="1">
+                              <tr class="prof-th">
+                                <th>ユーザー名</th>
+                                <th>年齢</th>
+                                <th>性別</th>
+                                <th>居住地</th>
+                                <th>出身地</th>
+                              </tr>
+                              <tr>
+                                <td><%= @current_user.name %></td>　
+                                <td></td>
+                                <td><%= @current_user.gender %></td>
+                                <td><%= @residence %></td>
+                                <td><%= @birthplace %></td>
+                              </tr>
+                    </table>
+                    
+                    <div class="prof-main">
+                        <p><i class="fas fa-user"></i>プロフィール</p>
+                        <%= @current_user.profile %>
+                    </div>
+                    
                 </div>
                 
-            </div>
-            
+        </div>
+        
+                    
+        
+        <div class="management-menu">
+            <ul class="management-list">
+               <li><%= link_to("プロフィールの編集", "/users/#{@current_user.id}/edit",:class => "mnglist one") %></li>
+               <li><%= link_to("参加イベント", "/users/#{@current_user.id}/mypage_belong",:class => "mnglist three") %></li>
+               <li><%= link_to("サークルの編集", "/users/#{@current_user.id}/mypage_now",:class => "mnglist four") %></li>
+               <li><%= link_to("お気に入りしたサークル", "/users/#{@current_user.id}/likes",:class => "mnglist five") %></li>
+            </ul>
+        </div>
     </div>
-    
-                
-    
-    <div class="management-menu">
-        <ul class="management-list">
-           <li><%= link_to("プロフィールの編集", "/users/#{@current_user.id}/edit",:class => "mnglist one") %></li>
-           <li><%= link_to("参加イベント", "/users/#{@current_user.id}/mypage_belong",:class => "mnglist three") %></li>
-           <li><%= link_to("サークルの編集", "/users/#{@current_user.id}/mypage_now",:class => "mnglist four") %></li>
-           <li><%= link_to("お気に入りしたサークル", "/users/#{@current_user.id}/likes",:class => "mnglist five") %></li>
-        </ul>
-    </div>
-                
-                
-                
-                
-                
-                
-</div>
+<%= render 'footer' %>

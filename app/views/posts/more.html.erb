@@ -1,35 +1,37 @@
-<div class="more-top">
-    <div class="area-title more-title">
-        <h2 class="more-name">新着のイベント</h2>
-    </div>
-
-          <div class="container">
-          <% @newevents.first(24).each do |post| %>
-          <div class="box">
-                <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
-                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
-                <% end %>
-          <div class="box-title">
-                <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
-          </div> 
-          <div class="box-content">
-                 <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
-         </div>
-                 <div class="box-table">
-                <table>
-                     <tr>
-                         <th>募集人数</th>
-                         <th>現在</th>
-                         <th>残り</th>
-                     </tr>
-                     <tr>
-                         <td><%= post.target_number %>人</th>
-                         <td>○人</th>
-                         <td>○日</th>
-                     </tr>
-                </table>
+<%= render 'header' %>
+    <div class="more-top">
+        <div class="area-title more-title">
+            <h2 class="more-name">新着のイベント</h2>
+        </div>
+    
+              <div class="container">
+              <% @newevents.first(24).each do |post| %>
+              <div class="box">
+                    <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
+                    <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
+                    <% end %>
+              <div class="box-title">
+                    <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
+              </div> 
+              <div class="box-content">
+                     <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
              </div>
-         </div>
-         <% end %>
-         </div>
-</div>
+                     <div class="box-table">
+                    <table>
+                         <tr>
+                             <th>募集人数</th>
+                             <th>現在</th>
+                             <th>残り</th>
+                         </tr>
+                         <tr>
+                             <td><%= post.target_number %>人</th>
+                             <td>○人</th>
+                             <td>○日</th>
+                         </tr>
+                    </table>
+                 </div>
+             </div>
+             <% end %>
+             </div>
+    </div>
+<%= render 'footer' %>

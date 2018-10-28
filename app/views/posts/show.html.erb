@@ -1,28 +1,20 @@
-<div class="posts-show">
+<%= render 'header' %>
 
-<div class="show-top">
-    
-   
-
-     
-    <div class="event-top">
-        <div class="show-title">
-            <h2><%= @post.title %></h2>
-        </div>
-        
+    <div class="posts-show">
+        <div class="show-top">
+        <div class="event-top">
+            <div class="show-title">
+                <h2><%= @post.title %></h2>
+            </div>
         
             <div class="show-main-image">
                  <img src="<%= "/images/#{@post.main_image}" %>">
-                
             </div>
             
             <div class="event-outline">
                 <p><%= @post.outline %></p>
             </div>
-       
 
-        
-    
         <div class="info-box">
             <div class="tg-number">
                 <div>募集人数</div>
@@ -105,3 +97,5 @@
     </div>
   </div>
 </div>    
+
+<%= render 'footer' %>

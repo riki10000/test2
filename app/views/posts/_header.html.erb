@@ -1,0 +1,153 @@
+    <header>
+        <div class="header-top">
+            <ul class="header-title">
+                <li class="header-title">
+                    <%= link_to("Event", "/" ,:class => "title-style" ) %>
+                </li>
+            </ul>
+                <i id="open_menu" class="fas fa-bars"></i>
+
+            <ul class="header-menu">
+                    <li id = "open" class="header-serch responsive-serch">
+                        serch
+                    </li>
+            </ul>
+            
+            <ul id="menu">
+                <% if @current_user %>
+                <i id="close_menu"  class="far fa-times-circle"></i>
+                    <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("create", "/posts/new",:class => "list-style firstli") %>
+                    </li>
+                      
+                    <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("logout", "/logout" , {method: :post ,:class => "list-style secoundli logbtn"}) %>
+                    </li>
+                      
+                    <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("mypage","/users/#{@current_user.id}" ,:class => "list-style mybtn") %>
+                    </li>
+                   
+                    
+                      
+                <% else %>
+               <i id="close_menu"  class="far fa-times-circle"></i>
+               
+                    <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("create", "/posts/new",:class => "list-style firstli") %>
+                    </li>
+                      
+                    <li id = "humb-menu" class="header-list sub">
+                        <%= link_to("new/login", "/users/login_form",:class => "list-style secoundli logbtn") %>
+                    </li>
+                      
+                    
+            </ul>
+                 
+                  <% end %>
+                
+        
+          </div> 
+
+    </header>
+    
+    <div id="modal" class="hidden">
+    <p class="serch-category-title">ジャンルから探す</p>
+          　<ul>
+                <li class="category-list-modal">
+                    <%= link_to('スポーツ /', {controller: 'posts', action: 'category', category: 's', category_name: 'スポーツ'}, class: "serch-category") %>
+                </li>
+                <li class="category-list-modal">
+                    <%= link_to("文化系 /", {controller: "posts", action: "category",category: "c", category_name: "文化系"}, class: "serch-category") %>
+                </li>
+                
+                <li class="category-list-modal">
+                    <%= link_to('ビジネス /', {controller: 'posts', action: 'category',category:'b',category_name: 'ビジネス'}, class: "serch-category") %>
+                </li>
+                
+                <li class="category-list-modal">
+                    <%= link_to('旅 /', {controller: 'posts', action: 'category',category:'t',category_name: '旅'}, class: "serch-category") %>
+                </li>
+                
+                <li class="category-list-modal">
+                    <%= link_to('アウトドア /', {controller: 'posts', action: 'category',category:'o',category_name: 'アウトドア'}, class: "serch-category") %>
+                </li>
+                
+                <li class="category-list-modal">
+                    <%= link_to('グルメ・お酒 /', {controller: 'posts', action: 'category',category:'g',category_name: 'グルメ・お酒'}, class: "serch-category") %>
+                </li>
+                
+                <li class="category-list-modal">
+                    <%= link_to('その他', {controller: 'posts', action: 'category',category:'ot',category_name: 'その他'}, class: "serch-category") %>
+                </li>
+            </ul>
+            
+            <p class="serch-region-title">開催地から探す</p>
+        <div class="region-modal">
+          <%= form_tag("/home/areapage") do %>
+          <%= select_tag 'venue[num]', options_for_select([["北海道","1"],
+                                                                                  ["青森","2"],
+                                                                                  ["秋田","3"],
+                                                                                  ["山形","4"],
+                                                                                  ["岩手","5"],
+                                                                                  ["宮城","6"],
+                                                                                  ["福島","7"],
+                                                                                  ["新潟","8"],
+                                                                                  ["東京","9"], 
+                                                                                  ["神奈川","10"],
+                                                                                  ["埼玉","11"],
+                                                                                  ["千葉","12"],
+                                                                                  ["茨城","13"], 
+                                                                                  ["栃木","14"],
+                                                                                  ["群馬","15"],
+                                                                                  ["長野","16"],
+                                                                                  ["山梨","17"],
+                                                                                  ["静岡","18"],
+                                                                                  ["富山","19"],
+                                                                                  ["岐阜","20"], 
+                                                                                  ["愛知","21"],
+                                                                                  ["石川","22"], 
+                                                                                  ["福井","23"], 
+                                                                                  ["大阪","24"],
+                                                                                  ["京都","25"], 
+                                                                                  ["兵庫","26"], 
+                                                                                  ["滋賀","27"],
+                                                                                  ["三重","28"], 
+                                                                                  ["奈良","29"], 
+                                                                                  ["和歌山","30"],
+                                                                                  ["岡山","31"], 
+                                                                                  ["鳥取","32"],
+                                                                                  ["香川","33"],
+                                                                                  ["徳島","34"],
+                                                                                  ["高知","35"],
+                                                                                  ["愛媛","36"],
+                                                                                  ["鳥取","37"],
+                                                                                  ["広島","38"],
+                                                                                  ["山口","39"],
+                                                                                  ["福岡","40"], 
+                                                                                  ["大分","41"],
+                                                                                  ["佐賀","42"],
+                                                                                  ["長崎","43"],
+                                                                                  ["熊本","44"],
+                                                                                  ["宮崎","45"],
+                                                                                  ["鹿児島","46"],
+                                                                                  ["沖縄","47"],
+                                                                                  ["海外","48"]
+                                                                                  ]) %>
+           <input type="submit" value="探す" class="serch-btn">
+          <% end %>
+        </div>
+    <div id="close" class="close-btn">
+      
+    </div>
+    </div>
+
+    
+    
+
+    <div id="mask" class="hidden"></div>
+
+    <script src="js/main.js"></script>
+    
+
+    

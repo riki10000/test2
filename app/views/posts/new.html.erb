@@ -1,6 +1,5 @@
-<div class="posts-new">
-     
-     
+<%= render 'header' %>
+  <div class="posts-new">
     <h2>イベントを立ち上げる</h2>
       <%= form_tag("/posts/create", {multipart: true}) do %>
         <table class="post-newtable" border="1">
@@ -73,9 +72,6 @@
                     </select>
                  </td>  
               </tr>
-          
-          
-          
           <tr>
               <th>開催日</th><th>締切日</th>
           </tr>
@@ -125,97 +121,7 @@
             <div class="post-newbtn">
                   <input type="submit" value="イベントを投稿する">
             </div>
-              
         <% end %>
-              
-</div>      
-      
-      
-      <!--<table>-->
-      <!--  <th><p>イベントの名称</p> </th>-->
-      <!--  <td><input name="title"></td>-->
-      <!--</table>-->
-            
-      <!--  <table>-->
-      <!--     <th>カテゴリー</th>-->
-      <!--     <td>-->
-      <!--          <select class="selectcategory" name="category">-->
-      <!--              <option value="s">スポーツ</option>-->
-      <!--              <option value="c">文化系</option>-->
-      <!--              <option value="b">ビジネス</option>-->
-      <!--              <option value="t">旅</option>-->
-      <!--              <option value="o">アウトドア</option>-->
-      <!--              <option value="g">グルメ・お酒</option>-->
-      <!--              <option value="ot">その他</option>-->
-      <!--          </select>-->
-      <!--     </td>-->
-           
-      <!--  <th>開催地</th>-->
-      <!--      <td><select class="selectvalue" name="venue">-->
-      <!--                  <option value="1">北海道</option>-->
-      <!--                  <option value="2">青森</option>-->
-      <!--                  <option value="3">秋田</option>-->
-      <!--                  <option value="4">山形</option>-->
-      <!--                  <option value="5">岩手</option>-->
-      <!--                  <option value="6">宮城</option>-->
-      <!--                  <option value="7">福島</option>-->
-      <!--                  <option value="8">新潟</option>-->
-      <!--                  <option value="9">東京</option>-->
-      <!--                  <option value="10">神奈川</option>-->
-      <!--                  <option value="11">埼玉</option>-->
-      <!--                  <option value="12">千葉</option>-->
-      <!--                  <option value="13">茨城</option>-->
-      <!--                  <option value="14">栃木</option>-->
-      <!--                  <option value="15">群馬</option>-->
-      <!--                  <option value="16">長野</option>-->
-      <!--                  <option value="17">山梨</option>-->
-      <!--                  <option value="18">静岡</option>-->
-      <!--                  <option value="19">富山</option>-->
-      <!--                  <option value="20">岐阜</option>-->
-      <!--                  <option value="21">愛知</option>-->
-      <!--                  <option value="22">石川</option>-->
-      <!--                  <option value="23">福井</option>-->
-      <!--                  <option value="24">大阪</option>-->
-      <!--                  <option value="25">京都</option>-->
-      <!--                  <option value="26">兵庫</option>-->
-      <!--                  <option value="27">滋賀</option>-->
-      <!--                  <option value="28">三重</option>-->
-      <!--                  <option value="29">奈良</option>-->
-      <!--                  <option value="30">和歌山</option>-->
-      <!--                  <option value="31">岡山</option>-->
-      <!--                  <option value="32">鳥取</option>-->
-      <!--                  <option value="33">香川</option>-->
-      <!--                  <option value="34">徳島</option>-->
-      <!--                  <option value="35">高知</option>-->
-      <!--                  <option value="36">愛媛</option>-->
-      <!--                  <option value="37">鳥取</option>-->
-      <!--                  <option value="38">広島</option>-->
-      <!--                  <option value="39">山口</option>-->
-      <!--                  <option value="40">福岡</option>-->
-      <!--                  <option value="41">大分</option>-->
-      <!--                  <option value="42">佐賀</option>-->
-      <!--                  <option value="43">長崎</option>-->
-      <!--                  <option value="44">熊本</option>-->
-      <!--                  <option value="45">宮崎</option>-->
-      <!--                  <option value="46">鹿児島</option>-->
-      <!--                  <option value="47">沖縄</option>-->
-      <!--                  <option value="48">海外</option>-->
-      <!--          </select>-->
-      <!--      </td>-->
-      <!--  </table>-->
-        
-                
-      <!--  <p>メイン画像</p>-->
-      <!--      <input name="main_image" type="file">-->
-      <!--  <p>イベントの概要</p>-->
-      <!--      <textarea name="outline"></textarea>-->
-      <!--  <p>開催日</p>-->
-      <!--  <p>開催場所</p>-->
-      <!--  <p>イベントの締め切り日</p>-->
-      <!--      <input name="event_date" type="date">-->
-      <!--  <p>募集人数</p>-->
-      <!--      <input type="number" name="target_number" >-->
-      <!--  <p>募集金額</p>-->
-      <!--      <input name="target_money" type="number">-->
-      <!--  <p>イベント本分</p>-->
+  </div>
+<%= render 'footer' %>
 

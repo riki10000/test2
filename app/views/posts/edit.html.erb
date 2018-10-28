@@ -1,5 +1,4 @@
-
-
+<%= render 'header' %>
     <div class="posts-edit">
         <div class="edit-container">
             <h2>イベントの編集</h2>
@@ -41,3 +40,4 @@
              <p><%= link_to("全削除","/posts/#{@post.id}/destroy",{method: "post"}) %></p>
         </div>
     </div>
+<%= render 'footer' %>

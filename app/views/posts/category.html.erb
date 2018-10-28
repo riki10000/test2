@@ -1,35 +1,26 @@
+<%= render 'header' %>
 <div class="category-top">
     <div class="category-title">
         <h2 class="category-name"><i class="fas fa-book-open"></i><%= @name %></h2>
     </div>
-
+    
           <div class="container">
-          <% @posts.first(8).each do |post| %>
-          <div class="box">
-                <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
-                <%= image_tag"/images/#{post.main_image}", :size => '250x180' %>
-                <% end %>
-          <div class="box-title">
-                <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
-          </div> 
-          <div class="box-content">
-                 <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
-         </div>
-                 <div class="box-table">
-                <table>
-                     <tr>
-                         <th>募集人数</th>
-                         <th>現在</th>
-                         <th>残り</th>
-                     </tr>
-                     <tr>
-                         <td><%= post.target_number %>人</th>
-                         <td>○人</th>
-                         <td>○日</th>
-                     </tr>
-                </table>
-             </div>
-         </div>
-         <% end %>
+              <% @posts.first(8).each do |post| %>
+                  <div class="box">
+                        <%= link_to("/posts/#{post.id}/show" , :class => "post-style") do %>
+                        <%= image_tag"/images/#{post.main_image}", :size => '200x150' ,:class => "post-img" %>
+                        <% end %>
+                  <div class="box-title">
+                        <%= link_to( post.title, "/posts/#{post.id}/show", :class => "post-style")  %>
+                  </div> 
+                  <div class="box-content">
+                      <%= link_to( post.outline, "/posts/#{post.id}/show", :class => "post-style" ) %>
+                 </div>
+                 </div>
+             <% end %>
          </div>
 </div>
+
+<!--<div>-->
+<!--    <%= render 'footer' %>-->
+<!--</div>-->
