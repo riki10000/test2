@@ -4,9 +4,7 @@ class HomeController < ApplicationController
     @user = User.find_by(id: params[:id])
     @posts = Post.all
     @newevents = Post.all.order(created_at: :desc)
-    @numbers = EventJoin.where(user_id: params[:id]).count
-    
-    @newevent = Post.all.order(created_at: :desc)
+
     
     # like_count = Post.joins(:likes).group(:post_id).count
     

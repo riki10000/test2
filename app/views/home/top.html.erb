@@ -121,190 +121,202 @@
   <!--</div>-->
     
    
-    
-    
-    <% @newevents.first(1).each do |post| %>
-        <section class="item item-maindish box-A">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @posts.first(1).each do |post| %>
-        <section class="item item-m item-breaktime box-B">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-     <% @posts[1..-1].first(1).each do |post| %>
-        <section class="item item-m item-appetizer box-C">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @newevents[1..-1].first(1).each do |post| %>
-        <section class="item item-column box-D">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @posts[3..-1].first(1).each do |post| %>
-        <section class="item item-m item-maindish box-E">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @newevents[2..-1].first(1).each do |post| %>
-        <section class="item item-appetizer box-F">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    
-    <% @newevents[3..-1].first(1).each do |post| %>
-        <section class="item item-column box-G">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    
- 
-    <% @posts[2..-1].first(1).each do |post| %>
-        <section class="item item-m item-breaktime box-H">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @newevents[4..-1].first(1).each do |post| %>
-        <section class="item item-maindish box-I">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @newevents[5..-1].first(1).each do |post| %>
-        <section class="item item-column box-J">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-     <% @posts[4..-1].first(1).each do |post| %>
-        <section class="item item-m item-breaktime box-K">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @newevents[6..-1].first(1).each do |post| %>
-        <section class="item item-appetizer box-L">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @newevents[7..-1].first(1).each do |post| %>
-        <section class="item item-breaktime box-M">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @newevents[8..-1].first(1).each do |post| %>
-        <section class="item item-maindish box-N">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @posts[5..-1].first(1).each do |post| %>
-        <section class="item item-m item-breaktime box-O">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                 <p class="description"><%= post.outline %></p>
-            </a>
-        </section>
-    <% end %>
-    
-    <% @newevents[9..-1].first(1).each do |post| %>
-        <section class="item item-appetizer box-P">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @newevents[10..-1].first(1).each do |post| %>
-        <section class="item item-maindish box-Q">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
-    
-    <% @newevents[11..-1].first(1).each do |post| %>
-        <section class="item item-column box-R">
-            <a href="<%= "/posts/#{post.id}/show" %>">
-                <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
-                <div class="category"><%= post.title %></div>
-                <p class="description"><%= post.outline %></p>
-            </a>
-        </section>  
-    <% end %>
+     <% if @posts.present? %>   
+        
+        <% @newevents.first(1).each do |post| %>
+            <section class="item item-maindish box-A">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @posts.first(1).each do |post| %>
+            <section class="item item-m item-breaktime box-B">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+         <% @posts[1..-1].first(1).each do |post| %>
+            <section class="item item-m item-appetizer box-C">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @newevents[1..-1].first(1).each do |post| %>
+            <section class="item item-column box-D">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        
+        <% @posts[2..-1].first(1).each do |post| %>
+            <section class="item item-m item-maindish box-E">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @posts[4..-1].first(1).each do |post| %>
+            <section class="item item-m item-maindish box-E">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @newevents[2..-1].first(1).each do |post| %>
+            <section class="item item-appetizer box-F">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        
+        <% @newevents[3..-1].first(1).each do |post| %>
+            <section class="item item-column box-G">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        
+     
+        <% @posts[2..-1].first(1).each do |post| %>
+            <section class="item item-m item-breaktime box-H">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @newevents[4..-1].first(1).each do |post| %>
+            <section class="item item-maindish box-I">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @newevents[5..-1].first(1).each do |post| %>
+            <section class="item item-column box-J">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+         <% @posts[4..-1].first(1).each do |post| %>
+            <section class="item item-m item-breaktime box-K">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @newevents[6..-1].first(1).each do |post| %>
+            <section class="item item-appetizer box-L">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @newevents[7..-1].first(1).each do |post| %>
+            <section class="item item-breaktime box-M">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @newevents[8..-1].first(1).each do |post| %>
+            <section class="item item-maindish box-N">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @posts[5..-1].first(1).each do |post| %>
+            <section class="item item-m item-breaktime box-O">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                     <p class="description"><%= post.outline %></p>
+                </a>
+            </section>
+        <% end %>
+        
+        <% @newevents[9..-1].first(1).each do |post| %>
+            <section class="item item-appetizer box-P">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @newevents[10..-1].first(1).each do |post| %>
+            <section class="item item-maindish box-Q">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+        
+        <% @newevents[11..-1].first(1).each do |post| %>
+            <section class="item item-column box-R">
+                <a href="<%= "/posts/#{post.id}/show" %>">
+                    <img class="image" src="<%= "/images/#{post.main_image}" %>" alt="メイン">
+                    <div class="category"><%= post.title %></div>
+                    <p class="description"><%= post.outline %></p>
+                </a>
+            </section>  
+        <% end %>
+     <% end %>
 
 <div class="footer-none">
     <%= render 'footer' %>
